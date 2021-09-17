@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Cool stuff from Mars!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class = 'container'>
+            <div class = 'row'>
+                <h4>Latest Mars News</h4>
+                <br>
+                <h5>{{mars.newsTitle}}</h5>
+                <p>{{mars.newsText}}</p>
+            </div>
+            <div class = 'row'>
+                <div class = 'col-md-8'>
+                    <h4>Mars Featured Image</h4>
+                    <img src = "{{mars.featuredImage}}" class = 'rounded float-left'>
+                </div>
+                <div ckass = 'col-md-4'>
+                    <h4>Mars Facts</h4>
+                    <iframe id = "marsFacts"
+                    title = 'Mars Facts'
+                    width = '400'
+                    height = "400"
+                    src = '{{mars.marsFacts}}'>
+                </iframe>
+                </div>
+            </div>
+            <div class = 'row'>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src='{{mars.hemisphereNames[0]}}'alt="First Hemisphere">
+                    <div class="card-body">
+                      <h5 class="card-title">{{mars.hemisphereNames[0]}}</h5>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{mars.hemisphereNames[1]}}" alt="Second Hemisphere">
+                    <div class="card-body">
+                        <h5 class="card-title">{{mars.hemisphereNames[1]}}</h5>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{mars.hemisphereNames[2]}}" alt="Third Hemisphere">
+                    <div class="card-body">
+                      <h5 class="card-title">{{mars.hemisphereNames[2]}}</h5>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{mars.hemisphereNames[3]}}" alt="Fourth Hemisphere">
+                    <div class="card-body">
+                      <h5 class="card-title">{{mars.hemisphereNames[3]}}</h5>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

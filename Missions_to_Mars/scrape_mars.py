@@ -154,7 +154,7 @@ def scrape():
 
     ## setting the list to empty for the loop
     hemisphere_image_urls = []
-
+    hemisphereNames = []
     ## Open a browser
     browser = Browser('chrome', **executable_path, headless = False)
 
@@ -163,6 +163,7 @@ def scrape():
         ## go to the hemisphere
         browser.visit(hemispheresURL)
         hemisphereName = hemi.h3.text
+        hemisphereName.append(hemisphereName)
         browser.links.find_by_partial_text(hemisphereName).click()
         hemiHTML = browser.html
         soup = bs(hemiHTML, 'html.parser')
@@ -174,9 +175,11 @@ def scrape():
         time.sleep(1)
 
     marsReturnDict = {}
-    marsReturnDict['News Title'] = news_title
-    marsReturnDict['News Text'] = news_p
-    marsReturnDict['Mars Facts'] = marsFactsHTML
-    marsReturnDict['Mars Hemispheres'] = hemisphere_image_urls
+    marsReturnDict['newsTitle'] = news_title
+    marsReturnDict['newsText'] = news_p
+    marsReturnDict['featuredImage'] = featured_image_url
+    marsReturnDict['marsFacts'] = marsFactsHTML
+    marsReturnDict['hemisphereNames'] = hemisphereNames
+    marsReturnDict['hemisphereImages'] = hemisphere_image_urls
     
     return marsReturnDict
